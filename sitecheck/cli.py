@@ -25,7 +25,7 @@ def read_args():
             help="enter one or more URLs",
             )
     # as above, but lacking nargs as we only want one file to be read
-    parser.add_arguement(
+    parser.add_argument(
             "-f",
             "--file",
             metavar="FILE",
