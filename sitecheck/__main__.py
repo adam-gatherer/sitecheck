@@ -18,7 +18,7 @@ def main():
         print('Err: no URLs provided', file=sys.stderr)
         sys.exit(1)
     # runs function to check synchronously
-    _syncrhonous_check(urls)
+    _synchronous_check(urls)
 
 
 # gets urls from arguments
@@ -26,8 +26,8 @@ def _get_urls(user_args):
     # stores list of urls from arguments
     urls = user_args.urls
     # if arg is a file, run _read_urls_from_file on the file
-    if user_args.input_file:
-        urls += _read_urls_from_file(user_args.input_file)
+    if user_args.file:
+        urls += _read_urls_from_file(user_args.file)
     return urls
 
 
@@ -61,7 +61,7 @@ def _synchronous_check(urls):
         # to fale, put the error to 'error'
         try:
             result = site_online(url)
-        except Exception as E:
+        except Exception as e:
             result = False
             error = str(e)
         # runs display_check function with result, url, and error 
